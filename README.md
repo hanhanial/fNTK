@@ -1,6 +1,6 @@
 # fNTK
 
-## Codes for downloading and cleaning, and Sample data
+## Sample data
 Folder: sample_data 
 * Refer to sub-folder downloading_cleaning_codes for codes to download options data from Wharton Research Data Services (WRDS) and to clean/filter raw data
 * SPX.data contains a sample of (clean) SPX data, for both put and call options, between 01 Apr 2020 and 15 Apr 2020. All models are performed for put and call options separately.
