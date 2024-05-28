@@ -6,7 +6,7 @@ Folder: sample_data
 * SPX.data contains a sample of (clean) SPX data, for both put and call options, between 01 Apr 2020 and 15 Apr 2020. All models are performed for put and call options separately.
 
 
-## Simulation studies
+## Simulated data
 Folder: simulation
 * Two sub-folders: linear and nonlinear, for linear and nonlinear setup, respectively
 * In each sub-folder: run S01_sim_data.r to simulate IVS data
