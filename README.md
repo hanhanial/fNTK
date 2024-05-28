@@ -5,15 +5,13 @@ Folder: sample_data
 * Refer to sub-folder downloading_cleaning_codes for codes to download options data from Wharton Research Data Services (WRDS) and to clean/filter raw data
 * SPX.data contains a sample of (clean) SPX data, for both put and call options, between 01 Apr 2020 and 15 Apr 2020. All models are performed for put and call options separately.
 
+
 ## Simulation studies
 Folder: simulation
 * Two sub-folders: linear and nonlinear, for linear and nonlinear setup, respectively
 * In each sub-folder:
   + Run S01_sim_data.r to simulate IVS data
-  + Run S02_FAR_NTK.py for NTK parameterized neural networks
-  + Run S02_FAR_KRR.py for parametric kernels
-  + Run S02_FAR_random_walk.py for random walk
-  
+
 
 ## Nonlinear functional autoregressive (NFAR) models
 Folder: NFAR_models
