@@ -9,8 +9,7 @@ Folder: sample_data
 ## Simulation studies
 Folder: simulation
 * Two sub-folders: linear and nonlinear, for linear and nonlinear setup, respectively
-* In each sub-folder:
-  + Run S01_sim_data.r to simulate IVS data
+* In each sub-folder: run S01_sim_data.r to simulate IVS data
 
 
 ## Nonlinear functional autoregressive (NFAR) models
