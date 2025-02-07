@@ -322,9 +322,9 @@ def tuning_NTK(train_x, train_y, val_x, val_y,
         model.to(device)
 
         criterion = nn.MSELoss()
-        optimizer = optim.SGD(model.parameters(),
+        optimizer = optim.AdamW(model.parameters(),
                                 lr = learning_rate,
-                                weight_decay = weight_decay_rates[j]) # optim.AdamW
+                                weight_decay = weight_decay_rates[j]) # optim.SGD 
 
         loss_stats, rmse_stats, val_rmse, num_epoch = fit(model = model, 
                                                           train_criterion = criterion, val_criterion = criterion,
@@ -434,9 +434,9 @@ def pred_test_day(i,n_neurons,n_layers,learning_rate,tuned_weight_decay_rate):
     model.to(device)
 
     criterion = nn.MSELoss()
-    optimizer = optim.SGD(model.parameters(),
+    optimizer = optim.AdamW(model.parameters(),
                             lr = learning_rate,
-                            weight_decay = float(selected_hyperparams['weight_decay_rate'].values)) # optim.AdamW
+                            weight_decay = float(selected_hyperparams['weight_decay_rate'].values)) # optim.SGD
 
     loss_stats, rmse_stats, val_rmse, num_epoch = fit(model = model, 
                                                     train_criterion = criterion, 

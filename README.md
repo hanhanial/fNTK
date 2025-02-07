@@ -38,6 +38,10 @@ Following the CW models proposed by Almeida 2022, we have:
 * S02_DNN_CarrWu for codes for CW with DNN correction
 
 
+### Prediction accuracy for each model
+File: compute_pred_accuracy.r
+
+
 ## Trading strategies
 Folder: trading_strategies
 * First, extract trading signals with S02_trading_signals.r code: for each model, buying or selling an option depends on whether the model predicts the IV (of the same option) to increase or decrease on day $t+h$, compared to the IV on day $t$
