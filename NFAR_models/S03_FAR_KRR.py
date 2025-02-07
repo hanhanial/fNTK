@@ -279,62 +279,62 @@ best_hyperparams = best_hyperparams.drop(columns=['tuned'])
 
 
 # %%
-overall_RMSE = mean_squared_error(y_true = all_test_preds.IV, 
-                                  y_pred = all_test_preds.fcst_IV,squared=False)
-overall_MAE = mean_absolute_error(y_true = all_test_preds.IV, 
-                                  y_pred = all_test_preds.fcst_IV)
-overall_MAPE = mean_absolute_percentage_error(y_true = all_test_preds.IV, 
-                                              y_pred = all_test_preds.fcst_IV)
+# overall_RMSE = mean_squared_error(y_true = all_test_preds.IV, 
+#                                   y_pred = all_test_preds.fcst_IV,squared=False)
+# overall_MAE = mean_absolute_error(y_true = all_test_preds.IV, 
+#                                   y_pred = all_test_preds.fcst_IV)
+# overall_MAPE = mean_absolute_percentage_error(y_true = all_test_preds.IV, 
+#                                               y_pred = all_test_preds.fcst_IV)
 
-overall_accuracy = pd.DataFrame({'period': ['overall'],
-                                 'RMSE': [overall_RMSE],
-                                 'MAE': [overall_MAE],
-                                 'MAPE': [overall_MAPE]})
-
-
-before_covid_preds = all_test_preds[all_test_preds["test_day_ahead_date"] < "2020-01-01"]
-if before_covid_preds.shape[0] != 0:
-    before_covid_RMSE = mean_squared_error(y_true = before_covid_preds.IV, y_pred = before_covid_preds.fcst_IV,squared=False)
-    before_covid_MAE = mean_absolute_error(y_true = before_covid_preds.IV, y_pred = before_covid_preds.fcst_IV)
-    before_covid_MAPE = mean_absolute_percentage_error(y_true = before_covid_preds.IV, y_pred = before_covid_preds.fcst_IV)
-
-    before_covid_accuracy = pd.DataFrame({'period': ['before_Covid'],
-                                          'RMSE': [before_covid_RMSE],
-                                          'MAE': [before_covid_MAE],
-                                          'MAPE': [before_covid_MAPE]}) 
-else:
-    before_covid_accuracy = pd.DataFrame({'period': [],
-                                          'RMSE': [],
-                                          'MAE': [],
-                                          'MAPE': []}) 
-
-after_covid_preds = all_test_preds[all_test_preds["test_day_ahead_date"] >= "2020-01-01"]
-if after_covid_preds.shape[0] != 0:
-    after_covid_RMSE = mean_squared_error(y_true = after_covid_preds.IV, y_pred = after_covid_preds.fcst_IV,squared=False)
-    after_covid_MAE = mean_absolute_error(y_true = after_covid_preds.IV, y_pred = after_covid_preds.fcst_IV)
-    after_covid_MAPE = mean_absolute_percentage_error(y_true = after_covid_preds.IV, y_pred = after_covid_preds.fcst_IV)
-
-    after_covid_accuracy = pd.DataFrame({'period': ['after_Covid'],
-                                          'RMSE': [after_covid_RMSE],
-                                          'MAE': [after_covid_MAE],
-                                          'MAPE': [after_covid_MAPE]}) 
-else:
-    after_covid_accuracy = pd.DataFrame({'period': [],
-                                          'RMSE': [],
-                                          'MAE': [],
-                                          'MAPE': []}) 
+# overall_accuracy = pd.DataFrame({'period': ['overall'],
+#                                  'RMSE': [overall_RMSE],
+#                                  'MAE': [overall_MAE],
+#                                  'MAPE': [overall_MAPE]})
 
 
-# %%
-all_accuracy = pd.concat([overall_accuracy,before_covid_accuracy,after_covid_accuracy])
-print("Observed test IV accuracy: ")
-print(all_accuracy)
+# before_covid_preds = all_test_preds[all_test_preds["test_day_ahead_date"] < "2020-01-01"]
+# if before_covid_preds.shape[0] != 0:
+#     before_covid_RMSE = mean_squared_error(y_true = before_covid_preds.IV, y_pred = before_covid_preds.fcst_IV,squared=False)
+#     before_covid_MAE = mean_absolute_error(y_true = before_covid_preds.IV, y_pred = before_covid_preds.fcst_IV)
+#     before_covid_MAPE = mean_absolute_percentage_error(y_true = before_covid_preds.IV, y_pred = before_covid_preds.fcst_IV)
+
+#     before_covid_accuracy = pd.DataFrame({'period': ['before_Covid'],
+#                                           'RMSE': [before_covid_RMSE],
+#                                           'MAE': [before_covid_MAE],
+#                                           'MAPE': [before_covid_MAPE]}) 
+# else:
+#     before_covid_accuracy = pd.DataFrame({'period': [],
+#                                           'RMSE': [],
+#                                           'MAE': [],
+#                                           'MAPE': []}) 
+
+# after_covid_preds = all_test_preds[all_test_preds["test_day_ahead_date"] >= "2020-01-01"]
+# if after_covid_preds.shape[0] != 0:
+#     after_covid_RMSE = mean_squared_error(y_true = after_covid_preds.IV, y_pred = after_covid_preds.fcst_IV,squared=False)
+#     after_covid_MAE = mean_absolute_error(y_true = after_covid_preds.IV, y_pred = after_covid_preds.fcst_IV)
+#     after_covid_MAPE = mean_absolute_percentage_error(y_true = after_covid_preds.IV, y_pred = after_covid_preds.fcst_IV)
+
+#     after_covid_accuracy = pd.DataFrame({'period': ['after_Covid'],
+#                                           'RMSE': [after_covid_RMSE],
+#                                           'MAE': [after_covid_MAE],
+#                                           'MAPE': [after_covid_MAPE]}) 
+# else:
+#     after_covid_accuracy = pd.DataFrame({'period': [],
+#                                           'RMSE': [],
+#                                           'MAE': [],
+#                                           'MAPE': []}) 
 
 
-# %%
-all_test_preds.to_csv(odir + option_type + "_pred_test_IV.csv",index=False)
-all_accuracy.to_csv(odir + option_type + "_pred_test_IV_accuracy.csv",index=False)
-best_hyperparams.to_csv(odir  + option_type + "_best_hyperparams.csv",index=False)
+# # %%
+# all_accuracy = pd.concat([overall_accuracy,before_covid_accuracy,after_covid_accuracy])
+# print("Observed test IV accuracy: ")
+# print(all_accuracy)
+
+
+# # %%
+# all_test_preds.to_csv(odir + option_type + "_pred_test_IV.csv",index=False)
+# all_accuracy.to_csv(odir + option_type + "_pred_test_IV_accuracy.csv",index=False)
+# best_hyperparams.to_csv(odir  + option_type + "_best_hyperparams.csv",index=False)
 
 
 # %%
