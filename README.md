@@ -9,9 +9,7 @@ Folder: sample_data
 ## Simulated data
 Folder: simulation
 * Two sub-folders: linear and nonlinear, for linear and nonlinear setup, respectively
-* In each sub-folder: 
-  - Run S01_sim_data.r to simulate IVS data
-  - Run S02_* code for random walk (RF), neural tangent kernel (NTK) and classical kernel Ridge regression (KRR) models
+* In each sub-folder: Run S01_sim_data.r to simulate IVS data. Run S02_* code for random walk (RF), neural tangent kernel (NTK) and classical kernel Ridge regression (KRR) models
 
 ### Prediction accuracy for each model
 File: compute_pred_accuracy.r
